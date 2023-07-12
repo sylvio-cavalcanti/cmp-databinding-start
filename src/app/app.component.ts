@@ -18,4 +18,21 @@ export class AppComponent {
       content: 'Just a test! 2'
     }
   ];
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+    // 'serverData' in the parameter is tue values emited from the child component 'cockpit'
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent,
+    });
+  }
+
+  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content:  blueprintData.serverContent,
+    });
+  } 
 }
